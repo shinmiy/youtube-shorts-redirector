@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "YouTube Shorts Redirector",
+    "description": "Redirects any shorts link to the original video.",
+    "version": "1.0",
+    "icons": {
+        "16": "images/icon.png",
+        "32": "images/icon.png",
+        "48": "images/icon.png",
+        "128": "images/icon.png"
+      },
+    "background": {
+        "scripts": [
+            "scripts/background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.youtube.com/*"
+            ],
+            "js": [
+                "scripts/content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "tabs"
+    ]
+}
